@@ -1,0 +1,211 @@
+    @font-face {
+        font-family: 'Aka-AcidGR-RealAdult';
+        src: url('/assets/fonts/Aka-AcidGR-RealAdult.woff2') format('woff2'), url('assets/fonts/Aka-AcidGR-RealAdult.woff') format('woff');
+        font-weight: 100;
+        font-style: normal;
+        font-display: swap;
+    }
+    
+    @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
+        }
+        10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
+        }
+        20% {
+            transform: translate(-3px, 0px) rotate(1deg);
+        }
+        30% {
+            transform: translate(3px, 2px) rotate(0deg);
+        }
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
+        }
+        50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+        }
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+        70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+        }
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+        90% {
+            transform: translate(1px, 2px) rotate(0deg);
+        }
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
+    }
+    
+    body {
+        font-family: 'Aka-AcidGR-RealAdult';
+    }
+    
+    #title-start {
+        display: none;
+    }
+    
+    #title-game {
+        display: none;
+    }
+    
+    #game {
+        display: block;
+    }
+    
+    #game .title {
+        font-size: 85px;
+    }
+    
+    .container {
+        width: 840px;
+        height: 640px;
+        margin: 0 auto;
+        border: 2px solid black;
+        margin-top: 60px;
+        position: relative;
+    }
+    
+    .title {
+        font-size: 120px;
+        text-align: center;
+        margin: 20px 0px 15px 0px;
+    }
+    
+    .btn {
+        font-family: 'Aka-AcidGR-RealAdult';
+        background-color: red;
+        font-size: 70px;
+        text-align: center;
+        border-radius: 55px;
+        padding: 5px 0px;
+        margin: 0 auto;
+        max-width: 250px;
+        cursor: pointer;
+        border-left: 5px solid black;
+        border-bottom: 5px solid black;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        transform: scale(.9);
+        transition: .4s;
+    }
+    
+    .btn-back {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        max-width: 150px;
+        font-size: 50px;
+        width: 100%;
+    }
+    
+    .btn:hover {
+        transform: scale(1);
+    }
+    
+    .img-title {
+        background-image: url(/assets/img/title.png);
+        background-position: top center;
+        background-size: cover;
+        width: 445px;
+        height: 320px;
+        margin: 0 auto;
+    }
+    
+    .img-mago {
+        background-image: url(/assets/img/mago.png);
+        background-position: top center;
+        background-size: cover;
+        width: 285px;
+        height: 330px;
+        margin: 0 auto;
+        margin-top: 35px;
+        margin-bottom: 15px;
+    }
+    
+    #history {
+        background-color: black;
+        color: white;
+        width: 75%;
+        margin: 0 auto;
+        padding: 20px;
+        height: 80px;
+        margin-bottom: 15px;
+        border: 5px solid gray;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+    }
+    
+    .row {
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    
+    .choise {
+        width: 160px;
+        height: 200px;
+        cursor: pointer;
+    }
+    
+    .rival {
+        width: 160px;
+        height: 200px;
+        cursor: pointer;
+    }
+    
+    .choise:hover {
+        animation: shake 0.5s;
+    }
+    
+    .img-dogo {
+        background-image: url(/assets/img/dogo.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .img-papel {
+        background-image: url(/assets/img/paper.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .img-pedra {
+        background-image: url(/assets/img/rock.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .img-tesoura {
+        background-image: url(/assets/img/tesoura.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .oponente {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 5px solid red;
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 20px;
+        margin-top: 20px;
+    }
+    
+    .vs {
+        font-size: 150px;
+        color: red;
+    }
