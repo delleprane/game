@@ -10,13 +10,32 @@ var pedra = document.getElementById("pedra");
 var tesoura = document.getElementById("tesoura");
 var yourChoise = document.getElementById("your-choise");
 var oponenteChoise = document.getElementById("oponente-choise");
+var win = document.getElementById("win");
+var lose = document.getElementById("lose");
+var draw = document.getElementById("draw");
 
 var contHistoy = 0
 
-var arrayChoiseBot = [
-    "img-papel",
-    "img-tesoura",
-    "img-pedra"
+var randownChoiseBot = ''
+
+var userWin = 0
+var userLose = 0
+var userDraw = 0
+
+draw.innerHTML = userDraw
+
+var arrayChoiseBot = [{
+        'value': 1,
+        'title': 'img-papel'
+    },
+    {
+        'value': 2,
+        'title': 'img-tesoura'
+    },
+    {
+        'value': 3,
+        'title': 'img-pedra'
+    },
 ]
 
 paragraph.innerHTML = "Olá, tem alguem ai?"
@@ -27,6 +46,11 @@ btnStart.addEventListener('click', function(e) {
 });
 
 
+btnBack.addEventListener('click', function(e) {
+    titleGame.style.display = 'none';
+    titleStart.style.display = 'block';
+});
+
 
 function removeAllSelect() {
     yourChoise.classList.remove("img-papel");
@@ -35,12 +59,13 @@ function removeAllSelect() {
 }
 
 function radomChoiseBot(array) {
-
     let radomNumb = Math.floor(Math.random() * 3)
     oponenteChoise.classList.remove("img-papel");
     oponenteChoise.classList.remove("img-tesoura");
     oponenteChoise.classList.remove("img-pedra");
-    oponenteChoise.classList.add(array[radomNumb]);
+
+    randownChoiseBot = array[radomNumb].value
+    oponenteChoise.classList.add(array[radomNumb].title);
 }
 
 btnBack.addEventListener('click', function(e) {
@@ -50,18 +75,48 @@ btnBack.addEventListener('click', function(e) {
 papel.addEventListener('click', function(e) {
     removeAllSelect()
     radomChoiseBot(arrayChoiseBot)
+    if (randownChoiseBot == 1) {
+        userDraw += 1
+        draw.innerHTML = userDraw
+    } else if (randownChoiseBot == 2) {
+        userLose += 1
+        lose.innerHTML = userLose
+    } else if (randownChoiseBot == 3) {
+        userWin += 1
+        win.innerHTML = userWin
+    }
     yourChoise.classList.add("img-papel");
 });
 
 pedra.addEventListener('click', function(e) {
     removeAllSelect()
     radomChoiseBot(arrayChoiseBot)
+    if (randownChoiseBot == 3) {
+        userDraw += 1
+        draw.innerHTML = userDraw
+    } else if (randownChoiseBot == 1) {
+        userLose += 1
+        lose.innerHTML = userLose
+    } else if (randownChoiseBot == 2) {
+        userWin += 1
+        win.innerHTML = userWin
+    }
     yourChoise.classList.add("img-pedra");
 });
 
 tesoura.addEventListener('click', function(e) {
     removeAllSelect()
     radomChoiseBot(arrayChoiseBot)
+    if (randownChoiseBot == 2) {
+        userDraw += 1
+        draw.innerHTML = userDraw
+    } else if (randownChoiseBot == 3) {
+        userLose += 1
+        lose.innerHTML = userLose
+    } else if (randownChoiseBot == 1) {
+        userWin += 1
+        win.innerHTML = userWin
+    }
     yourChoise.classList.add("img-tesoura");
 });
 
