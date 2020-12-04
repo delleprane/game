@@ -17,10 +17,51 @@ var draw = document.getElementById("draw");
 var contHistoy = 0
 
 var randownChoiseBot = ''
+var round = 0
 
 var userWin = 0
 var userLose = 0
 var userDraw = 0
+
+var method = {
+    resetAll: function() {
+        round = 0
+        userWin = 0
+        userLose = 0
+        userDraw = 0
+        win.innerHTML = userWin
+        lose.innerHTML = userLose
+        draw.innerHTML = userDraw
+        oponenteChoise.classList.remove("img-papel");
+        oponenteChoise.classList.remove("img-tesoura");
+        oponenteChoise.classList.remove("img-pedra");
+        yourChoise.classList.remove("img-papel");
+        yourChoise.classList.remove("img-tesoura");
+        yourChoise.classList.remove("img-pedra");
+    },
+
+    calcPlacar: function() {
+        if (round == 5) {
+            if (userWin > userLose) {
+                if (window.confirm('Você venceu !! Pronto para encarar seu próximo adversário.')) {
+                    alert('next')
+                } else {
+                    alert('back')
+                }
+            } else {
+                method.resetAll()
+                if (window.confirm('Você Perdeu !! Quer jogar denovo?')) {
+                    method.resetAll()
+                } else {
+                    game.style.display = 'none';
+                    titleStart.style.display = 'block';
+                }
+            }
+        }
+    }
+}
+
+
 
 draw.innerHTML = userDraw
 
@@ -73,6 +114,7 @@ btnBack.addEventListener('click', function(e) {
 });
 
 papel.addEventListener('click', function(e) {
+    round += 1
     removeAllSelect()
     radomChoiseBot(arrayChoiseBot)
     if (randownChoiseBot == 1) {
@@ -86,9 +128,11 @@ papel.addEventListener('click', function(e) {
         win.innerHTML = userWin
     }
     yourChoise.classList.add("img-papel");
+    setTimeout(() => { method.calcPlacar() }, 1000);
 });
 
 pedra.addEventListener('click', function(e) {
+    round += 1
     removeAllSelect()
     radomChoiseBot(arrayChoiseBot)
     if (randownChoiseBot == 3) {
@@ -102,9 +146,11 @@ pedra.addEventListener('click', function(e) {
         win.innerHTML = userWin
     }
     yourChoise.classList.add("img-pedra");
+    setTimeout(() => { method.calcPlacar() }, 1000);
 });
 
 tesoura.addEventListener('click', function(e) {
+    round += 1
     removeAllSelect()
     radomChoiseBot(arrayChoiseBot)
     if (randownChoiseBot == 2) {
@@ -118,6 +164,7 @@ tesoura.addEventListener('click', function(e) {
         win.innerHTML = userWin
     }
     yourChoise.classList.add("img-tesoura");
+    setTimeout(() => { method.calcPlacar() }, 1000);
 });
 
 btnNext.addEventListener('click', function(e) {
