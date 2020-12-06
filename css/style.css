@@ -131,7 +131,7 @@
     }
     
     .img-title {
-        background-image: url(game/assets/img/title.png);
+        background-image: url(/game/assets/img/title.png);
         background-position: top center;
         background-size: cover;
         width: 445px;
@@ -140,7 +140,7 @@
     }
     
     .img-mago {
-        background-image: url(/assets/img/mago.png);
+        background-image: url(/game/assets/img/mago.png);
         background-position: top center;
         background-size: cover;
         width: 285px;
@@ -197,42 +197,42 @@
     }
     
     .img-dogo {
-        background-image: url(game/assets/img/dogo.png);
+        background-image: url(/game/assets/img/dogo.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
     }
     
     .img-fantasma {
-        background-image: url(/assets/img/fantasma.png);
+        background-image: url(/game/assets/img/fantasma.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
     }
     
     .img-morte {
-        background-image: url(/assets/img/morte.png);
+        background-image: url(/game/assets/img/morte.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
     }
     
     .img-papel {
-        background-image: url(/assets/img/paper.png);
+        background-image: url(/game/assets/img/paper.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
     }
     
     .img-pedra {
-        background-image: url(/assets/img/rock.png);
+        background-image: url(/game/assets/img/rock.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
     }
     
     .img-tesoura {
-        background-image: url(/assets/img/tesoura.png);
+        background-image: url(/game/assets/img/tesoura.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
