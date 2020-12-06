@@ -28,7 +28,7 @@ var userWin = 0
 var userLose = 0
 var userDraw = 0
 
-rival.classList.add('img-morte');
+rival.classList.add('img-dogo');
 
 var method = {
     resetAll: function() {
@@ -45,37 +45,49 @@ var method = {
         yourChoise.classList.remove("img-papel");
         yourChoise.classList.remove("img-tesoura");
         yourChoise.classList.remove("img-pedra");
+        method.removeAllRival()
+        rival.classList.add("img-dogo");
+    },
+
+    removeAllRival: function() {
+        rival.classList.remove("img-dogo");
+        rival.classList.remove("img-fantasma");
+        rival.classList.remove("img-morte");
     },
 
     calcPlacar: function() {
-        if (round == 5) {
-            if (userWin > userLose) {
-                countWinnerGamePlay += 1
-                game.style.display = 'none';
-                gameOver.style.display = 'flex'
-                msg.innerHTML = 'Você venceu !! Pronto para encarar seu próximo adversário.'
-                btnMsg.addEventListener('click', function(e) {
-                    gameOver.style.display = 'none';
-                    game.style.display = 'block';
-                    if (countWinnerGamePlay == 1) {
-
-                    }
-
-                });
-            } else {
+        if (userWin > userLose) {
+            countWinnerGamePlay += 1
+            game.style.display = 'none';
+            gameOver.style.display = 'flex'
+            msg.innerHTML = 'Você venceu !! Pronto para encarar seu próximo adversário.'
+            console.log('>>>', countWinnerGamePlay)
+            btnMsg.addEventListener('click', function(e) {
                 method.resetAll()
-                game.style.display = 'none';
-                gameOver.style.display = 'flex'
-                msg.innerHTML = 'Você Perdeu !! Quer jogar denovo?'
-                btnMsg.addEventListener('click', function(e) {
-                    gameOver.style.display = 'none';
-                    game.style.display = 'block';
-                });
-            }
+                gameOver.style.display = 'none';
+                game.style.display = 'block';
+                if (countWinnerGamePlay == 1) {
+                    method.removeAllRival()
+                    rival.classList.add("img-fantasma");
+                } else if (countWinnerGamePlay == 2) {
+                    method.removeAllRival()
+                    rival.classList.add("img-morte");
+                }
+
+            });
+        } else {
+            method.resetAll()
+            countWinnerGamePlay = 0
+            game.style.display = 'none';
+            gameOver.style.display = 'flex'
+            msg.innerHTML = 'Você Perdeu !! Quer jogar denovo?'
+            btnMsg.addEventListener('click', function(e) {
+                gameOver.style.display = 'none';
+                game.style.display = 'block';
+            });
         }
     }
 }
-
 
 
 draw.innerHTML = userDraw
@@ -105,6 +117,8 @@ btnStart.addEventListener('click', function(e) {
 btnBack.addEventListener('click', function(e) {
     titleGame.style.display = 'none';
     titleStart.style.display = 'block';
+    contHistoy = 0
+    paragraph.innerHTML = "Olá, tem alguem ai?"
 });
 
 
@@ -143,7 +157,9 @@ papel.addEventListener('click', function(e) {
         win.innerHTML = userWin
     }
     yourChoise.classList.add("img-papel");
-    setTimeout(() => { method.calcPlacar() }, 1000);
+    if (round == 5) {
+        setTimeout(() => { method.calcPlacar() }, 500);
+    }
 });
 
 pedra.addEventListener('click', function(e) {
@@ -161,7 +177,9 @@ pedra.addEventListener('click', function(e) {
         win.innerHTML = userWin
     }
     yourChoise.classList.add("img-pedra");
-    setTimeout(() => { method.calcPlacar() }, 1000);
+    if (round == 5) {
+        setTimeout(() => { method.calcPlacar() }, 500);
+    }
 });
 
 tesoura.addEventListener('click', function(e) {
@@ -179,7 +197,9 @@ tesoura.addEventListener('click', function(e) {
         win.innerHTML = userWin
     }
     yourChoise.classList.add("img-tesoura");
-    setTimeout(() => { method.calcPlacar() }, 1000);
+    if (round == 5) {
+        setTimeout(() => { method.calcPlacar() }, 500);
+    }
 });
 
 btnNext.addEventListener('click', function(e) {
