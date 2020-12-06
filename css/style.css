@@ -59,12 +59,8 @@
     }
     
     #gameOver {
-        display: none;
-    }
-    
-    #gameOver {
         height: 100%;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
     }
