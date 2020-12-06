@@ -61,7 +61,6 @@ var method = {
             game.style.display = 'none';
             gameOver.style.display = 'flex'
             msg.innerHTML = 'Você venceu !! Pronto para encarar seu próximo adversário.'
-            console.log('>>>', countWinnerGamePlay)
             btnMsg.addEventListener('click', function(e) {
                 method.resetAll()
                 gameOver.style.display = 'none';
@@ -221,6 +220,5 @@ btnNext.addEventListener('click', function(e) {
         default:
             console.log('Sem texto.');
     }
-
 
 });
