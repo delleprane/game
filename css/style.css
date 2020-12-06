@@ -1,6 +1,6 @@
     @font-face {
         font-family: 'Aka-AcidGR-RealAdult';
-        src: url('/assets/fonts/Aka-AcidGR-RealAdult.woff2') format('woff2'), url('assets/fonts/Aka-AcidGR-RealAdult.woff') format('woff');
+        src: url('game/assets/fonts/Aka-AcidGR-RealAdult.woff2') format('woff2'), url('assets/fonts/Aka-AcidGR-RealAdult.woff') format('woff');
         font-weight: 100;
         font-style: normal;
         font-display: swap;
@@ -131,7 +131,7 @@
     }
     
     .img-title {
-        background-image: url(/assets/img/title.png);
+        background-image: url(game/assets/img/title.png);
         background-position: top center;
         background-size: cover;
         width: 445px;
@@ -197,7 +197,7 @@
     }
     
     .img-dogo {
-        background-image: url(/assets/img/dogo.png);
+        background-image: url(game/assets/img/dogo.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
