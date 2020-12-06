@@ -58,6 +58,28 @@
         display: block;
     }
     
+    #gameOver {
+        display: none;
+    }
+    
+    #gameOver {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #gameOver .btn {
+        width: 400px;
+    }
+    
+    #gameOver .text {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 600;
+    }
+    
     #game .title {
         font-size: 85px;
     }
@@ -176,6 +198,20 @@
     
     .img-dogo {
         background-image: url(/assets/img/dogo.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .img-fantasma {
+        background-image: url(/assets/img/fantasma.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .img-morte {
+        background-image: url(/assets/img/morte.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;

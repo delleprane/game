@@ -1,9 +1,12 @@
 var titleStart = document.getElementById('title-start');
 var titleGame = document.getElementById('title-game');
 var game = document.getElementById('game');
+var gameOver = document.getElementById('gameOver');
+var msg = document.getElementById('msg');
 var btnStart = document.getElementById('btn-start');
 var btnBack = document.getElementById('btn-back');
 var btnNext = document.getElementById('btn-next');
+var btnMsg = document.getElementById('btnMsg');
 var paragraph = document.getElementById("history");
 var papel = document.getElementById("papel");
 var pedra = document.getElementById("pedra");
@@ -13,8 +16,10 @@ var oponenteChoise = document.getElementById("oponente-choise");
 var win = document.getElementById("win");
 var lose = document.getElementById("lose");
 var draw = document.getElementById("draw");
+var rival = document.getElementById('rival');
 
 var contHistoy = 0
+var countWinnerGamePlay = 0
 
 var randownChoiseBot = ''
 var round = 0
@@ -22,6 +27,8 @@ var round = 0
 var userWin = 0
 var userLose = 0
 var userDraw = 0
+
+rival.classList.add('img-morte');
 
 var method = {
     resetAll: function() {
@@ -43,19 +50,27 @@ var method = {
     calcPlacar: function() {
         if (round == 5) {
             if (userWin > userLose) {
-                if (window.confirm('Você venceu !! Pronto para encarar seu próximo adversário.')) {
-                    alert('next')
-                } else {
-                    alert('back')
-                }
+                countWinnerGamePlay += 1
+                game.style.display = 'none';
+                gameOver.style.display = 'flex'
+                msg.innerHTML = 'Você venceu !! Pronto para encarar seu próximo adversário.'
+                btnMsg.addEventListener('click', function(e) {
+                    gameOver.style.display = 'none';
+                    game.style.display = 'block';
+                    if (countWinnerGamePlay == 1) {
+
+                    }
+
+                });
             } else {
                 method.resetAll()
-                if (window.confirm('Você Perdeu !! Quer jogar denovo?')) {
-                    method.resetAll()
-                } else {
-                    game.style.display = 'none';
-                    titleStart.style.display = 'block';
-                }
+                game.style.display = 'none';
+                gameOver.style.display = 'flex'
+                msg.innerHTML = 'Você Perdeu !! Quer jogar denovo?'
+                btnMsg.addEventListener('click', function(e) {
+                    gameOver.style.display = 'none';
+                    game.style.display = 'block';
+                });
             }
         }
     }
