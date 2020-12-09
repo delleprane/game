@@ -19,7 +19,8 @@ Basicamente a premissa continua sendo a do clássico jogo de Jokenpô, onde temo
 
 O Jogador seleciona sua jogada, o inimigo gera uma resposta de maneira aleatória. O Jogador tem 5 chances para derrotar os seus inimigos, ao todo temos 3 inimigos para derrotar.
 
-##Links
+## Links
+
 [Apresentação do Projeto][projetcSlide]
 
 [projetcSlide]: https://slides.com/delleprane/deck "Link para apresentação do projeto"
