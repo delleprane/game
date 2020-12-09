@@ -47,7 +47,7 @@
     }
     
     #title-start {
-        display: none;
+        display: block;
     }
     
     #title-game {
@@ -55,7 +55,7 @@
     }
     
     #game {
-        display: block;
+        display: none;
     }
     
     #gameOver {
@@ -229,6 +229,26 @@
     
     .img-tesoura {
         background-image: url(../assets/img/tesoura.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .img-center {
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .img-win {
+        background-image: url(../assets/img/win.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .img-lose {
+        background-image: url(../assets/img/lose.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;

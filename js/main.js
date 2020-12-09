@@ -11,6 +11,7 @@ var paragraph = document.getElementById("history");
 var papel = document.getElementById("papel");
 var pedra = document.getElementById("pedra");
 var tesoura = document.getElementById("tesoura");
+var imgResult = document.getElementById("img-result");
 var yourChoise = document.getElementById("your-choise");
 var oponenteChoise = document.getElementById("oponente-choise");
 var win = document.getElementById("win");
@@ -60,26 +61,48 @@ var method = {
             countWinnerGamePlay += 1
             game.style.display = 'none';
             gameOver.style.display = 'flex'
-            msg.innerHTML = 'Você venceu !! Pronto para encarar seu próximo adversário.'
-            btnMsg.addEventListener('click', function(e) {
+            if (countWinnerGamePlay < 3) {
+                msg.innerHTML = 'Você venceu !! Pronto para encarar seu próximo adversário.'
+                imgResult.classList.remove("img-win");
+                imgResult.classList.remove("img-lose");
+                imgResult.classList.add("img-win");
+                btnMsg.addEventListener('click', function(e) {
+                    method.resetAll()
+                    gameOver.style.display = 'none';
+                    game.style.display = 'block';
+                    if (countWinnerGamePlay == 1) {
+                        method.removeAllRival()
+                        rival.classList.add("img-fantasma");
+                    } else if (countWinnerGamePlay == 2) {
+                        method.removeAllRival()
+                        rival.classList.add("img-morte");
+                    }
+                });
+            } else {
+                contHistoy = 0
                 method.resetAll()
-                gameOver.style.display = 'none';
-                game.style.display = 'block';
-                if (countWinnerGamePlay == 1) {
-                    method.removeAllRival()
-                    rival.classList.add("img-fantasma");
-                } else if (countWinnerGamePlay == 2) {
-                    method.removeAllRival()
-                    rival.classList.add("img-morte");
-                }
-
-            });
+                countWinnerGamePlay = 0
+                game.style.display = 'none';
+                gameOver.style.display = 'flex'
+                msg.innerHTML = 'Você venceu !! Deseja jogar denovo?'
+                imgResult.classList.remove("img-win");
+                imgResult.classList.remove("img-lose");
+                imgResult.classList.add("img-win");
+                btnMsg.addEventListener('click', function(e) {
+                    gameOver.style.display = 'none';
+                    game.style.display = 'none';
+                    titleStart.style.display = 'block';
+                });
+            }
         } else {
             method.resetAll()
             countWinnerGamePlay = 0
             game.style.display = 'none';
             gameOver.style.display = 'flex'
             msg.innerHTML = 'Você Perdeu !! Quer jogar denovo?'
+            imgResult.classList.remove("img-win");
+            imgResult.classList.remove("img-lose");
+            imgResult.classList.add("img-lose");
             btnMsg.addEventListener('click', function(e) {
                 gameOver.style.display = 'none';
                 game.style.display = 'block';
