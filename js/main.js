@@ -105,7 +105,7 @@ var arrayChoiseBot = [{
     },
 ]
 
-paragraph.innerHTML = "Olá, tem alguem ai?"
+paragraph.innerHTML = "Aos Guerreiros, Bárbaras e feiticeiros e até mesmo aos plebeus invocados por meio do Oráculo Facebook, minhas saudações!"
 
 btnStart.addEventListener('click', function(e) {
     titleStart.style.display = 'none';
@@ -117,7 +117,7 @@ btnBack.addEventListener('click', function(e) {
     titleGame.style.display = 'none';
     titleStart.style.display = 'block';
     contHistoy = 0
-    paragraph.innerHTML = "Olá, tem alguem ai?"
+    paragraph.innerHTML = "Aos Guerreiros, Bárbaras e feiticeiros e até mesmo aos plebeus invocados por meio do Oráculo Facebook, minhas saudações!"
 });
 
 
@@ -205,13 +205,13 @@ btnNext.addEventListener('click', function(e) {
     contHistoy += 1
     switch (contHistoy) {
         case 1:
-            paragraph.innerHTML = "Preciso da sua ajuda!"
+            paragraph.innerHTML = "Por meio desta mensagem venho pedir vossa ajuda: o desafio foi lançado!"
             break;
         case 2:
-            paragraph.innerHTML = "Sabe aquelas crianças ali?";
+            paragraph.innerHTML = "O reino dos monstros enviou os 3 melhores guerreiros deles para duelarem contra os nossos melhores guerreiros!!";
             break;
         case 3:
-            paragraph.innerHTML = "Eu gostaria muito do doce delas."
+            paragraph.innerHTML = "Serão 5 rodadas cada no torneio mortal de Jokenpôh! O vencedor levará todo o tributo do reino perdedor"
             break;
         case 4:
             titleGame.style.display = 'none';

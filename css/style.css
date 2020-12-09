@@ -47,7 +47,7 @@
     }
     
     #title-start {
-        display: block;
+        display: none;
     }
     
     #title-game {
@@ -55,7 +55,7 @@
     }
     
     #game {
-        display: none;
+        display: block;
     }
     
     #gameOver {
