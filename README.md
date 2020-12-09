@@ -26,4 +26,5 @@ O Jogador seleciona sua jogada, o inimigo gera uma resposta de maneira aleatóri
 [projetcSlide]: https://slides.com/delleprane/deck "Link para apresentação do projeto"
 
 [Jokenpoooh][linkGame]
+
 [linkGame]: https://delleprane.github.io/game/ "Link para Acessar o Jogo"
