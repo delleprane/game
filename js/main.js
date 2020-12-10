@@ -18,6 +18,7 @@ var win = document.getElementById("win");
 var lose = document.getElementById("lose");
 var draw = document.getElementById("draw");
 var rival = document.getElementById('rival');
+var audio = document.querySelector('audio');
 
 var contHistoy = 0
 var countWinnerGamePlay = 0
@@ -62,7 +63,7 @@ var method = {
             game.style.display = 'none';
             gameOver.style.display = 'flex'
             if (countWinnerGamePlay < 3) {
-                msg.innerHTML = 'Você venceu !! Pronto para encarar seu próximo adversário.'
+                msg.innerHTML = 'Você venceu essa rodada  !! Pronto para o próximo inimigo?'
                 imgResult.classList.remove("img-win");
                 imgResult.classList.remove("img-lose");
                 imgResult.classList.add("img-win");
@@ -84,7 +85,7 @@ var method = {
                 countWinnerGamePlay = 0
                 game.style.display = 'none';
                 gameOver.style.display = 'flex'
-                msg.innerHTML = 'Você venceu !! Deseja jogar denovo?'
+                msg.innerHTML = 'E a humanidade está salva!! Deseja duelar novamente?'
                 imgResult.classList.remove("img-win");
                 imgResult.classList.remove("img-lose");
                 imgResult.classList.add("img-win");
@@ -99,7 +100,7 @@ var method = {
             countWinnerGamePlay = 0
             game.style.display = 'none';
             gameOver.style.display = 'flex'
-            msg.innerHTML = 'Você Perdeu !! Quer jogar denovo?'
+            msg.innerHTML = 'Perdestes o nosso tributo!! Deseja duelar novamente?'
             imgResult.classList.remove("img-win");
             imgResult.classList.remove("img-lose");
             imgResult.classList.add("img-lose");
@@ -133,6 +134,7 @@ paragraph.innerHTML = "Aos Guerreiros, Bárbaras e feiticeiros e até mesmo aos 
 btnStart.addEventListener('click', function(e) {
     titleStart.style.display = 'none';
     titleGame.style.display = 'block';
+    audio.play();
 });
 
 
