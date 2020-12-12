@@ -200,7 +200,7 @@ papel.addEventListener('click', function(e) {
     }
     yourChoise.classList.add("img-papel");
     if (round == 5) {
-        setTimeout(() => { method.calcPlacar() }, 500);
+        setTimeout(() => { method.calcPlacar() }, 1);
     }
 });
 
@@ -220,7 +220,7 @@ pedra.addEventListener('click', function(e) {
     }
     yourChoise.classList.add("img-pedra");
     if (round == 5) {
-        setTimeout(() => { method.calcPlacar() }, 500);
+        setTimeout(() => { method.calcPlacar() }, 1);
     }
 });
 
@@ -240,7 +240,7 @@ tesoura.addEventListener('click', function(e) {
     }
     yourChoise.classList.add("img-tesoura");
     if (round == 5) {
-        setTimeout(() => { method.calcPlacar() }, 500);
+        setTimeout(() => { method.calcPlacar() }, 1);
     }
 });
 
