@@ -18,6 +18,7 @@ var win = document.getElementById("win");
 var lose = document.getElementById("lose");
 var draw = document.getElementById("draw");
 var rival = document.getElementById('rival');
+var soundMute = document.getElementById('soundMute');
 var audio = document.querySelector('audio');
 
 var contHistoy = 0
@@ -25,6 +26,7 @@ var countWinnerGamePlay = 0
 
 var randownChoiseBot = ''
 var round = 0
+var soundOff
 
 var userWin = 0
 var userLose = 0
@@ -134,13 +136,29 @@ paragraph.innerHTML = "Aos Guerreiros, Bárbaras e feiticeiros e até mesmo aos 
 btnStart.addEventListener('click', function(e) {
     titleStart.style.display = 'none';
     titleGame.style.display = 'block';
+    soundMute.style.display = 'block';
     audio.play();
+    soundOff = false
 });
+
+soundMute.addEventListener('click', function(e) {
+    if (!soundOff) {
+        audio.pause();
+        soundOff = true
+        soundMute.src = "./assets/img/volume-mute-solid.svg";
+    } else {
+        audio.play();
+        soundOff = !soundOff
+        soundMute.src = "./assets/img/volume-up-solid.svg";
+    }
+});
+
 
 
 btnBack.addEventListener('click', function(e) {
     titleGame.style.display = 'none';
     titleStart.style.display = 'block';
+    soundMute.style.display = 'none';
     contHistoy = 0
     paragraph.innerHTML = "Aos Guerreiros, Bárbaras e feiticeiros e até mesmo aos plebeus invocados por meio do Oráculo Facebook, minhas saudações!"
 });

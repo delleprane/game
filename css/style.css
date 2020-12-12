@@ -97,6 +97,15 @@
         position: relative;
     }
     
+    .float-sound {
+        display: none;
+        width: 30px;
+        position: absolute;
+        border: 0px;
+        top: 20px;
+        left: 20px;
+    }
+    
     .title {
         font-size: 120px;
         text-align: center;
