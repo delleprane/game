@@ -44,6 +44,14 @@
     
     body {
         font-family: 'Aka-AcidGR-RealAdult';
+        background-image: url(../assets/img/bg-h.png);
+        background-position: top center;
+        background-size: cover;
+    }
+    
+    section {
+        background-color: #fff;
+        height: 100%;
     }
     
     #title-start {
@@ -92,7 +100,8 @@
     .title {
         font-size: 120px;
         text-align: center;
-        margin: 20px 0px 15px 0px;
+        padding: 20px 0px 15px 0px;
+        margin: 0;
     }
     
     .btn {
@@ -142,8 +151,8 @@
         width: 285px;
         height: 330px;
         margin: 0 auto;
-        margin-top: 35px;
-        margin-bottom: 15px;
+        padding-top: 35px;
+        padding-bottom: 15px;
     }
     
     #history {
@@ -165,7 +174,7 @@
         justify-content: space-around;
         width: 80%;
         margin: 0 auto;
-        margin-top: 20px;
+        padding-top: 20px;
     }
     
     .row .col {
